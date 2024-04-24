@@ -1,6 +1,13 @@
+// ! Por noramtiva. Primero se importa lo de React.
 import { useState } from "react";
-import AddCategory from "./components/AddCategory";
-import GifGrid from "./components/GifGrid";
+
+// ! Importaciones de terceros.
+
+// ! Y despues nuestras importaciones. Por ultimo funciones o hooks.
+
+// import GifGrid from "./components/GifGrid";
+// import AddCategory from "./components/AddCategory";
+import { GifGrid, AddCategory } from "./components";
 
 const GifExpertApp = () => {
   const [categories, setCategories] = useState(["One Punch"]);
