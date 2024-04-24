@@ -1,14 +1,24 @@
-import { useEffect } from "react";
-import { getGifs } from "../helpers/getGifs";
+import GifItem from "./GifItem";
+import useFetchGifs from "./hooks/useFetchGifs";
 
 const GifGrid = ({ category }) => {
-  useEffect(() => {
-    getGifs(category);
-  }, []);
+  const { images, isLoading } = useFetchGifs(category);
 
   return (
     <>
       <h3>{category}</h3>
+      <div className="card-grid">
+        {/* Destructurando las propiedades de cada imagen */}
+        {images?.map((image) => (
+          <GifItem
+            key={image.id}
+            // ! De esta manera exparsimos todas las propiedades que tenemos en 'image', para que las pueda utilizar el componente.
+            {...image}
+            // title={image.title}
+            // url={image.url}
+          />
+        ))}
+      </div>
     </>
   );
 };
