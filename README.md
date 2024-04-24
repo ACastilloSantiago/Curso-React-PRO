@@ -1,1 +1,1 @@
-Profecionalizandome en React.
+Profesionalizandome en React.
